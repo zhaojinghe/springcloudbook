@@ -29,6 +29,11 @@
     <artifactId>jackson-annotations</artifactId>
   
 </dependency>
+<!-- l引入Feign依赖： -->
+<dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-feign</artifactId>
+    </dependency>
 
   </dependencies>
 </project>
