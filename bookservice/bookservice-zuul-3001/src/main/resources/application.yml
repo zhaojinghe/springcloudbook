@@ -1,0 +1,30 @@
+server:
+  port: 3001
+  context-path: /
+spring:
+  application:
+    name: bookservice-zuul
+
+eureka:
+  instance:
+    #hostname: localhost  #eureka客户端主机实例名称
+    instance-id: bookservice-zuul:3001 #客户端实例名称
+    prefer-ip-address: true #显示IP
+  client: 
+    healcheck:
+       enabled: true
+    service-url: 
+      defaultZone: http://eureka2001.school.com:2001/eureka/,http://eureka2002.school.com:2002/eureka/,http://eureka2003.school.com:2003/eureka/ # 集群
+
+info: 
+   groupId: $project.groupId$
+   artifactId: $project.artifactId$
+   version: $project.version$
+   负责人: 王五
+   联系电话: 110
+zuul:
+  ignored-services: "*"
+  routes:
+    bookServer.serviceId: bookservice-book
+    bookServer.path: /bookServer/**
+  prefix: /school
