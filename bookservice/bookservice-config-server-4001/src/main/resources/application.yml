@@ -1,0 +1,15 @@
+server: 
+  port: 4001 
+   
+spring:
+  application:
+    name:  bookservice-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhaojinghe/bookservice-config
+          search-paths:
+             - aaa
+             - bbb
+             - ccc
